@@ -170,7 +170,7 @@ This project is open source and available under the MIT License.
 
 ## 👤 Author
 
-**panyam lakshmi narasimhudu**
+**Panyam Lakshmi Narasimhudu**
 
 ## 🤝 Contributing
 
