@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Data and Models
+data/Video_Dataset/
+data/landmarks/
+model/sign_model.h5
+model/scaler.save
+model/labels.pkl
+
+# Streamlit
+.streamlit/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Environment files
+.env
+.env.local
