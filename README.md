@@ -149,21 +149,6 @@ Dense(num_classes, softmax) - Classification layer
 - **Deque Buffer**: Fixed-size queue (maxlen=5) for efficient voting
 - **Time-based Filtering**: 0.8s minimum gap between recognized signs
 
-## 🔍 Troubleshooting
-
-### Model not found
-- Ensure you've run `train_model.py` first
-- Check that `model/` directory contains all required files
-
-### Camera not working
-- Verify webcam permissions
-- Check that cv2.VideoCapture(0) works on your system
-
-### Low recognition accuracy
-- Ensure good lighting conditions
-- Keep hand fully visible in frame
-- Make clear, distinct hand gestures
-
 ## 📝 License
 
 This project is open source and available under the MIT License.
