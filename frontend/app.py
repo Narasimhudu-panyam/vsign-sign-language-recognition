@@ -1,3 +1,8 @@
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+MODEL_DIR = PROJECT_ROOT / 'backend' / 'model'
+
 import streamlit as st
 import cv2
 import numpy as np
@@ -9,13 +14,13 @@ import time
 from collections import deque
 
 # ---------------- LOAD MODEL ---------------- #
-model = tf.keras.models.load_model("model/sign_model.h5")
+model = tf.keras.models.load_model(str(MODEL_DIR / "sign_model.h5"))
 
-with open("model/labels.pkl", "rb") as f:
+with open(MODEL_DIR / "labels.pkl", "rb") as f:
     label_map = pickle.load(f)
 
 labels = {v: k for k, v in label_map.items()}
-scaler = joblib.load("model/scaler.save")
+scaler = joblib.load(MODEL_DIR / "scaler.save")
 
 # ---------------- MEDIAPIPE ---------------- #
 mp_hands = mp.solutions.hands

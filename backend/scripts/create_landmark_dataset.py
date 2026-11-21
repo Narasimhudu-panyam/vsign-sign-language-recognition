@@ -7,8 +7,9 @@ import numpy as np
 
 mp_hands = mp.solutions.hands
 
-DATA_PATH = Path("data/Video_Dataset")
-SAVE_PATH = Path("data/landmarks")
+BACKEND_DIR = Path(__file__).resolve().parent.parent
+DATA_PATH = BACKEND_DIR / "data" / "Video_Dataset"
+SAVE_PATH = BACKEND_DIR / "data" / "landmarks"
 VIDEO_EXTENSIONS = {".mp4", ".avi", ".mov", ".mkv"}
 
 

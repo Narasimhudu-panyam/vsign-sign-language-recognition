@@ -1,5 +1,6 @@
 import numpy as np
 import os
+from pathlib import Path
 import pickle
 import joblib
 
@@ -8,7 +9,9 @@ from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
-DATA_PATH = "data/landmarks"
+BACKEND_DIR = Path(__file__).resolve().parent.parent
+DATA_PATH = BACKEND_DIR / "data" / "landmarks"
+MODEL_DIR = BACKEND_DIR / "model"
 
 X = []
 y = []
@@ -42,11 +45,11 @@ scaler = StandardScaler()
 X = scaler.fit_transform(X)
 
 # SAVE scaler
-os.makedirs("model", exist_ok=True)
-joblib.dump(scaler, "model/scaler.save")
+MODEL_DIR.mkdir(parents=True, exist_ok=True)
+joblib.dump(scaler, str(MODEL_DIR / "scaler.save"))
 
 # SAVE labels
-with open("model/labels.pkl", "wb") as f:
+with open(MODEL_DIR / "labels.pkl", "wb") as f:
     pickle.dump(label_map, f)
 
 # SPLIT
@@ -65,6 +68,6 @@ print("🚀 Training...")
 
 model.fit(X_train, y_train, epochs=10, batch_size=16)
 
-model.save("model/sign_model.h5")
+model.save(str(MODEL_DIR / "sign_model.h5"))
 
 print("✅ Training completed!")
