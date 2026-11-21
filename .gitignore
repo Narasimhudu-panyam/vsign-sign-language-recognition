@@ -54,3 +54,10 @@ model/labels.pkl
 # Environment files
 .env
 .env.local
+
+# Organized VSign generated assets
+backend/data/Video_Dataset/
+backend/data/landmarks/
+backend/model/*.h5
+backend/model/*.pkl
+backend/model/*.save
